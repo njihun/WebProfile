@@ -3,9 +3,7 @@ console.log(deviceType());
 
 let social = document.querySelectorAll('.social > a');
 let insta = social[0];
-let insta2 = social[1];
 insta.children[0].src = drawingLogo().toDataURL('image/jpeg');
-insta2.children[0].src = drawingLogo().toDataURL('image/jpeg');
 switch (deviceType()) {
     case 'other':
         insta.href = "https://instagram.com/move._.on__";
