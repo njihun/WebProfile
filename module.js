@@ -54,7 +54,7 @@ const deviceType = () => {
         //IOS
         return 'ios';
     } else {
-        return 'other';
         //아이폰, 안드로이드 외 모바일
+        return 'other';
     }
 }
