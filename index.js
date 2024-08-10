@@ -15,8 +15,6 @@ switch (deviceType()) {
 document.querySelector('#mob-menu').addEventListener('click', function() {
     const button = this;
     let menu = document.querySelector('.menu');
-    console.log(1);
-    
     let list = document.querySelector('.menu > ul')
     if (menu.classList.contains('open')) {
         list.style.left = '-40%';
