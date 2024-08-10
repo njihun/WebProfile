@@ -1,5 +1,5 @@
 import { drawingLogo, deviceType } from "./module.js";
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('load', () => {
     document.getElementById('insta').src = drawingLogo().toDataURL('image/jpeg');
     let social = document.querySelectorAll('.social > a');
     let insta = social[0];
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
                 
         default:
-            // insta.href = 'https://instagram.com/move._.on__';
+            insta.href = 'https://instagram.com/move._.on__';
             break;
     }
 });
