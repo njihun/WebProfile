@@ -1,4 +1,4 @@
-export {drawingLogo, deviceType}
+export {drawingLogo, drawingGear, deviceType}
 const drawingLogo = (canvas = document.createElement('canvas'), data = [["#ffff00", "#ff0050", [50, 170, 25, 50, 170, 100]], ["#ff00e6", "#ffffff00", [30, -20, 60, 20, -60, 140]], ["#af00ea", "#c8c8c800", [3, -7, 20, 20, -10, 70]]]) => {
     canvas.width = 150;
     canvas.height = 150;
@@ -43,6 +43,35 @@ const drawingLogo = (canvas = document.createElement('canvas'), data = [["#ffff0
     ctx.beginPath();
     ctx.arc(100, 50, 2, 0, 2 * Math.PI);
     ctx.stroke();
+    return canvas;
+};
+const drawingGear = (canvas = document.createElement('canvas')) => {
+    canvas.width = 100;
+    canvas.height = 100;
+    let centerX = canvas.width/2;
+    let centerY = canvas.height/2;
+    let r = centerX/10*5.3
+    const ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = canvas.width/6;
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // 그림자 색상
+    ctx.shadowBlur = 10; // 그림자 블러 정도
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, r, 0, 2 * Math.PI);
+    ctx.stroke();
+    for (let i = 0; i < 8; i++) {
+        const angleInDegrees = i*45; // 예를 들어 45도
+        const angleInRadians = angleInDegrees * Math.PI / 180; // 각도를 라디안으로 변환
+        ctx.beginPath();
+        ctx.moveTo(centerX + r * Math.cos(angleInRadians), centerY + r * Math.sin(angleInRadians));
+        ctx.lineTo(centerX * (1 + 0.95*Math.cos(angleInRadians)), centerY * (1 + 0.95*Math.sin(angleInRadians)));
+        ctx.stroke(); // 선 그리기
+    }
+    ctx.shadowColor = 'transparent';
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, r, 0, 2 * Math.PI);
+    ctx.stroke();
+
     return canvas;
 };
 const deviceType = () => {

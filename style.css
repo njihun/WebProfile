@@ -85,13 +85,18 @@ header {
     top: calc(var(--menu-padding) - 3px);
     right: calc(var(--menu-padding) - 2px);
 }
-.social {
+.social > a {
     margin-right: var(--menu-padding);
 }
 .social img {
     width: calc(var(--menu-padding) * 2);
     border-radius: 50%;
-    margin-right: calc(var(--menu-padding) / 2);
+}
+.PopUp {
+    position: absolute;
+    top: 50%; /* 부모 요소의 높이의 50% 위치 */
+    left: 50%; /* 부모 요소의 너비의 50% 위치 */
+    transform: translate(-50%, -50%);
 }
 @media (max-width: 1279px) {
     :root {
