@@ -213,7 +213,7 @@ document.querySelectorAll('.menu > ul > li li').forEach((e) => {
                             touchEndTime = new Date().getTime();
                             let deltaTime = touchEndTime - touchStartTime;
                             // 속도 계산 (거리 / 시간)
-                            let speed = touchChangeY / deltaTime; // 픽셀/ms
+                            let speed = Math.min(touchChangeY / deltaTime, 4.1); // 픽셀/ms
                             // 가속도 계산 (속도 변화 / 시간)
                             // const acceleration = speed / deltaTime; // 픽셀/ms²
                             try {
@@ -307,7 +307,7 @@ document.querySelectorAll('.menu > ul > li li').forEach((e) => {
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'middle';
                     ctx.fillStyle = '#333'; // 텍스트 색상
-                    for (let i = 0; i < 30; i++) {
+                    for (let i = 0; i < 50; i++) {
                         let str = over(num, i);
                         ctx.fillText(str[0], centerX * 0.65, centerY * (1 + i * 0.7) - touchChangeY);
                         ctx.fillText(str[1], centerX * 1.35, centerY * (1 + i * 0.7) - touchChangeY);
